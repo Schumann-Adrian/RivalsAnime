@@ -39,6 +39,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Cursor = Cursors.NoMove2D;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Alagard", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
