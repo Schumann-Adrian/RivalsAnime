@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             button1 = new Button();
             button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxUsuarioLogin = new TextBox();
+            textBoxContraseñaLogin = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -49,6 +49,7 @@
             button1.Size = new Size(183, 126);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -66,25 +67,25 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // textBox1
+            // textBoxUsuarioLogin
             // 
-            textBox1.BackColor = SystemColors.InactiveCaptionText;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.ForeColor = SystemColors.Window;
-            textBox1.Location = new Point(244, 188);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(281, 16);
-            textBox1.TabIndex = 2;
+            textBoxUsuarioLogin.BackColor = SystemColors.InactiveCaptionText;
+            textBoxUsuarioLogin.BorderStyle = BorderStyle.None;
+            textBoxUsuarioLogin.ForeColor = SystemColors.Window;
+            textBoxUsuarioLogin.Location = new Point(244, 188);
+            textBoxUsuarioLogin.Name = "textBoxUsuarioLogin";
+            textBoxUsuarioLogin.Size = new Size(281, 16);
+            textBoxUsuarioLogin.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxContraseñaLogin
             // 
-            textBox2.BackColor = SystemColors.InactiveCaptionText;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.ForeColor = SystemColors.Menu;
-            textBox2.Location = new Point(244, 252);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(281, 16);
-            textBox2.TabIndex = 3;
+            textBoxContraseñaLogin.BackColor = SystemColors.InactiveCaptionText;
+            textBoxContraseñaLogin.BorderStyle = BorderStyle.None;
+            textBoxContraseñaLogin.ForeColor = SystemColors.Menu;
+            textBoxContraseñaLogin.Location = new Point(244, 252);
+            textBoxContraseñaLogin.Name = "textBoxContraseñaLogin";
+            textBoxContraseñaLogin.Size = new Size(281, 16);
+            textBoxContraseñaLogin.TabIndex = 3;
             // 
             // LoginForm
             // 
@@ -93,8 +94,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 445);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxContraseñaLogin);
+            Controls.Add(textBoxUsuarioLogin);
             Controls.Add(button2);
             Controls.Add(button1);
             DoubleBuffered = true;
@@ -108,7 +109,7 @@
 
         private Button button1;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxUsuarioLogin;
+        private TextBox textBoxContraseñaLogin;
     }
 }

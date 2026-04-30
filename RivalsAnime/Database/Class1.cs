@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RivalsAnime
+namespace RivalsAnime.Database
 {
     internal class Conexion
     {

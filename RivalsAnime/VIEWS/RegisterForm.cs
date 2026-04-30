@@ -1,4 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using RivalsAnime.Controller;
+using RivalsAnime.Database;
+using RivalsAnime.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +25,6 @@ namespace RivalsAnime.VIEWS
             string usuario = textBoxUsuario.Text.Trim();
             string contraseña = textBoxContraseña.Text.Trim();
 
-            // 🔴 Validar campos vacíos
             if (string.IsNullOrEmpty(usuario) ||
                 string.IsNullOrEmpty(contraseña) ||
                 comboRol.SelectedIndex == -1)
@@ -31,41 +33,37 @@ namespace RivalsAnime.VIEWS
                 return;
             }
 
-            int rol = comboRol.SelectedIndex + 1;
-
-            Conexion con = new Conexion();
-            MySqlConnection conn = con.establecerConexion();
-
-            if (conn != null)
+            UsuarioDTO dto = new UsuarioDTO()
             {
-                // 🔍 Comprobar si el usuario ya existe
-                string check = "SELECT COUNT(*) FROM usuarios WHERE nombre_usuario=@u";
-                MySqlCommand checkCmd = new MySqlCommand(check, conn);
-                checkCmd.Parameters.AddWithValue("@u", usuario);
+                Usuario = usuario,
+                Password = Hash(contraseña),
+                Rol = comboRol.SelectedIndex + 1
+            };
 
-                int existe = Convert.ToInt32(checkCmd.ExecuteScalar());
+            UsuarioController service = new UsuarioController();
 
-                if (existe > 0)
-                {
-                    MessageBox.Show("El usuario ya existe ❌");
-                    conn.Close();
-                    return;
-                }
+            bool resultado = service.Registrar(dto);
 
-                // 💾 Insertar usuario
-                string query = "INSERT INTO usuarios (nombre_usuario, password_hash, tipo_rol) VALUES (@u, @p, @r)";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@u", usuario);
-                cmd.Parameters.AddWithValue("@p", contraseña);
-                cmd.Parameters.AddWithValue("@r", rol);
+            if (resultado)
+            {
+                MessageBox.Show("Registrado correctamente 🔥");
 
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Usuario registrado correctamente 🔥");
-
-                conn.Close();
-
+                // 🧹 Limpiar campos
+                textBoxUsuario.Clear();
+                textBoxContraseña.Clear();
+                comboRol.SelectedIndex = 0;
             }
+            else
+            {
+                MessageBox.Show("El usuario ya existe ❌");
+            }
+
+
+        }
+
+        private string Hash(string contraseña)
+        {
+            throw new NotImplementedException();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
