@@ -20,6 +20,8 @@ namespace RivalsAnime
         public LoginForm()
         {
             InitializeComponent();
+
+            
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -75,10 +77,7 @@ namespace RivalsAnime
                     MessageBox.Show("Eres USUARIO 👤");
                 }
 
-                // 👉 Abrir otro formulario (ejemplo)
-                // HomeForm home = new HomeForm();
-                // home.Show();
-                // this.Hide();
+                 
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -126,6 +125,9 @@ namespace RivalsAnime
             {
                 MessageBox.Show("Error en el sistema ⚠️");
             }
+            AdminForm admin = new AdminForm();
+            admin.Show();
+            this.Close();
         }
 
         private string Hash(string contraseña)

@@ -13,6 +13,8 @@ namespace RivalsAnime.VIEWS
         public AdminForm()
         {
             InitializeComponent();
+
+            
         }
     }
 }

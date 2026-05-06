@@ -24,6 +24,8 @@ namespace RivalsAnime.VIEWS
             comboRol.Items.Add("Usuario");
 
             comboRol.SelectedIndex = 0;
+
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +60,10 @@ namespace RivalsAnime.VIEWS
                 textBoxUsuario.Clear();
                 textBoxContraseña.Clear();
                 comboRol.SelectedIndex = 0;
+                LoginForm loginForm = new LoginForm();
+                this.Close();
+                loginForm.Show();
+
             }
             else
             {
