@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,7 +26,61 @@ namespace RivalsAnime
         {
 
         }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string usuario = textBoxUsuarioLogin.Text.Trim();
+            string contraseña = textBoxContraseñaLogin.Text.Trim();
 
+            // 🔴 VALIDACIÓN
+            if (string.IsNullOrWhiteSpace(usuario) ||
+                string.IsNullOrWhiteSpace(contraseña))
+            {
+                MessageBox.Show("Introduce usuario y contraseña ❌");
+                return;
+            }
+
+            // 🔐 HASH DE LA CONTRASEÑA
+            string passwordHash = Hash(contraseña);
+
+            UsuarioDTO dto = new UsuarioDTO()
+            {
+                Usuario = usuario,
+                Password = passwordHash
+            };
+
+            UsuarioController controller = new UsuarioController();
+
+            int resultado = controller.Login(dto);
+
+            // 🔍 RESULTADOS
+            if (resultado == -1)
+            {
+                MessageBox.Show("Error en la conexión ❌");
+            }
+            else if (resultado == 0)
+            {
+                MessageBox.Show("Credenciales incorrectas ❌");
+            }
+            else
+            {
+                MessageBox.Show("Login correcto ✅");
+
+                // 🎯 AQUÍ PUEDES REDIRIGIR SEGÚN ROL
+                if (resultado == 1) // Admin
+                {
+                    MessageBox.Show("Eres ADMIN 🔥");
+                }
+                else if (resultado == 2) // Usuario
+                {
+                    MessageBox.Show("Eres USUARIO 👤");
+                }
+
+                // 👉 Abrir otro formulario (ejemplo)
+                // HomeForm home = new HomeForm();
+                // home.Show();
+                // this.Hide();
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             RegisterForm registro = new RegisterForm();
@@ -75,7 +130,18 @@ namespace RivalsAnime
 
         private string Hash(string contraseña)
         {
-            throw new NotImplementedException();
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(contraseña));
+
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+
+                return builder.ToString();
+            }
         }
     }
     }
