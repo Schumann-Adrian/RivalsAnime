@@ -1,55 +1,64 @@
 ﻿using RivalsAnime.Controller;
 using RivalsAnime.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace RivalsAnime.VIEWS
 {
     public partial class CrearForm : Form
     {
-        public CrearForm()
+        private AdminForm adminForm;
+
+        public CrearForm(AdminForm admin)
         {
             InitializeComponent();
+            adminForm = admin;
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
+            // 🔴 Validación básica
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-        string.IsNullOrWhiteSpace(txtVida.Text) ||
-        string.IsNullOrWhiteSpace(txtVida.Text) ||
-        string.IsNullOrWhiteSpace(txtDefensa.Text))
+                string.IsNullOrWhiteSpace(txtVida.Text) ||
+                string.IsNullOrWhiteSpace(txtAtaque.Text) ||
+                string.IsNullOrWhiteSpace(txtDefensa.Text))
             {
                 MessageBox.Show("Completa todos los campos ❌");
                 return;
             }
 
+            // 🔴 Validar números
+            if (!int.TryParse(txtVida.Text, out int vida) ||
+                !int.TryParse(txtAtaque.Text, out int ataque) ||
+                !int.TryParse(txtDefensa.Text, out int defensa))
+            {
+                MessageBox.Show("Vida, Ataque y Defensa deben ser números ❌");
+                return;
+            }
+
+            // 🟢 Crear objeto
             PersonajeDTO p = new PersonajeDTO()
             {
                 Nombre = txtNombre.Text,
-                Vida = int.Parse(txtVida.Text),
-                Ataque = int.Parse(txtVida.Text),
-                Defensa = int.Parse(txtDefensa.Text),
+                Vida = vida,
+                Ataque = ataque,
+                Defensa = defensa,
                 Habilidad = txtHabilidad.Text
             };
 
+            // 🟢 Insertar en BD
             PersonajeController controller = new PersonajeController();
-
             bool resultado = controller.CrearPersonaje(p);
 
             if (resultado)
             {
                 MessageBox.Show("Personaje creado 🔥");
 
-                // limpiar campos
-                txtNombre.Clear();
-                txtVida.Clear();
-                txtVida.Clear();
-                txtDefensa.Clear();
-                txtHabilidad.Clear();
+                // 🔥 ACTUALIZAR ADMIN
+                adminForm.CargarPersonajes();
+
+                adminForm.Show();
+                this.Close();
             }
             else
             {

@@ -33,6 +33,8 @@
             button1 = new Button();
             button4 = new Button();
             button5 = new Button();
+            dataGridPersonajes = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridPersonajes).BeginInit();
             SuspendLayout();
             // 
             // button2
@@ -97,6 +99,14 @@
             button5.TabIndex = 9;
             button5.UseVisualStyleBackColor = false;
             // 
+            // dataGridPersonajes
+            // 
+            dataGridPersonajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridPersonajes.Location = new Point(12, 84);
+            dataGridPersonajes.Name = "dataGridPersonajes";
+            dataGridPersonajes.Size = new Size(776, 354);
+            dataGridPersonajes.TabIndex = 10;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -104,12 +114,14 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridPersonajes);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button1);
             Controls.Add(button2);
             Name = "AdminForm";
             Text = "AdminForm";
+            ((System.ComponentModel.ISupportInitialize)dataGridPersonajes).EndInit();
             ResumeLayout(false);
         }
 
@@ -118,5 +130,6 @@
         private Button button1;
         private Button button4;
         private Button button5;
+        private DataGridView dataGridPersonajes;
     }
 }

@@ -14,9 +14,6 @@ namespace RivalsAnime
 {
     public partial class LoginForm : Form
     {
-        private object textBoxUsuario;
-        private object textBoxContraseña;
-
         public LoginForm()
         {
             InitializeComponent();
