@@ -1,6 +1,8 @@
+using RivalsAnime.VIEWS; 
+
 namespace RivalsAnime
 {
-    public partial class InicioForm : Form
+    public partial class InicioForm : BaseForm
     {
         public InicioForm()
         {

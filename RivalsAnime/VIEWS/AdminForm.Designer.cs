@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            button2 = new Button();
+            btnLeer = new Button();
             button1 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            btnActualizar = new Button();
+            btnEliminar = new Button();
             dataGridPersonajes = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridPersonajes).BeginInit();
             SuspendLayout();
             // 
-            // button2
+            // btnLeer
             // 
-            button2.BackColor = Color.Transparent;
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(157, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(144, 66);
-            button2.TabIndex = 2;
-            button2.UseVisualStyleBackColor = false;
+            btnLeer.BackColor = Color.Transparent;
+            btnLeer.BackgroundImage = (Image)resources.GetObject("btnLeer.BackgroundImage");
+            btnLeer.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLeer.FlatAppearance.BorderSize = 0;
+            btnLeer.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLeer.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLeer.FlatStyle = FlatStyle.Flat;
+            btnLeer.Location = new Point(157, 12);
+            btnLeer.Name = "btnLeer";
+            btnLeer.Size = new Size(144, 66);
+            btnLeer.TabIndex = 2;
+            btnLeer.UseVisualStyleBackColor = false;
+            btnLeer.Click += btnLeer_Click;
             // 
             // button1
             // 
@@ -69,35 +70,37 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button4
+            // btnActualizar
             // 
-            button4.BackColor = Color.Transparent;
-            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
-            button4.BackgroundImageLayout = ImageLayout.Stretch;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(497, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(144, 66);
-            button4.TabIndex = 8;
-            button4.UseVisualStyleBackColor = false;
+            btnActualizar.BackColor = Color.Transparent;
+            btnActualizar.BackgroundImage = (Image)resources.GetObject("btnActualizar.BackgroundImage");
+            btnActualizar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnActualizar.FlatAppearance.BorderSize = 0;
+            btnActualizar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnActualizar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnActualizar.FlatStyle = FlatStyle.Flat;
+            btnActualizar.Location = new Point(497, 12);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(144, 66);
+            btnActualizar.TabIndex = 8;
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click_1;
             // 
-            // button5
+            // btnEliminar
             // 
-            button5.BackColor = Color.Transparent;
-            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
-            button5.BackgroundImageLayout = ImageLayout.Stretch;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button5.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(647, 12);
-            button5.Name = "button5";
-            button5.Size = new Size(144, 66);
-            button5.TabIndex = 9;
-            button5.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.Transparent;
+            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Location = new Point(647, 12);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(144, 66);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // dataGridPersonajes
             // 
@@ -115,10 +118,10 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridPersonajes);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnActualizar);
             Controls.Add(button1);
-            Controls.Add(button2);
+            Controls.Add(btnLeer);
             Name = "AdminForm";
             Text = "AdminForm";
             ((System.ComponentModel.ISupportInitialize)dataGridPersonajes).EndInit();
@@ -126,10 +129,10 @@
         }
 
         #endregion
-        private Button button2;
+        private Button btnLeer;
         private Button button1;
-        private Button button4;
-        private Button button5;
+        private Button btnActualizar;
+        private Button btnEliminar;
         private DataGridView dataGridPersonajes;
     }
 }

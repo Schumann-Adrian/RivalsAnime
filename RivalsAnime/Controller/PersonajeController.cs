@@ -9,6 +9,7 @@ namespace RivalsAnime.Controller
 {
     public class PersonajeController
     {
+        // 🟢 CREAR NORMAL (LO DEJAS COMO ESTÁ)
         public bool CrearPersonaje(PersonajeDTO p)
         {
             Conexion con = new Conexion();
@@ -41,6 +42,45 @@ namespace RivalsAnime.Controller
             }
         }
 
+        // 🔥 NUEVO → CREAR O ACTUALIZAR (PARA JSON)
+        public bool CrearOActualizarPersonaje(PersonajeDTO p)
+        {
+            Conexion con = new Conexion();
+            MySqlConnection conn = con.establecerConexion();
+
+            if (conn == null) return false;
+
+            try
+            {
+                string query = @"INSERT INTO personajes
+                (nombre, vida_base, ataque_base, defensa_base, nombre_habilidad)
+                VALUES (@n, @v, @a, @d, @h)
+                ON DUPLICATE KEY UPDATE
+                    vida_base = @v,
+                    ataque_base = @a,
+                    defensa_base = @d,
+                    nombre_habilidad = @h";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@n", p.Nombre);
+                cmd.Parameters.AddWithValue("@v", p.Vida);
+                cmd.Parameters.AddWithValue("@a", p.Ataque);
+                cmd.Parameters.AddWithValue("@d", p.Defensa);
+                cmd.Parameters.AddWithValue("@h", p.Habilidad);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error JSON: " + ex.Message);
+                return false;
+            }
+        }
+
+        // 🟢 LEER (LO DEJAS IGUAL)
         public List<PersonajeDTO> ObtenerPersonajes()
         {
             List<PersonajeDTO> lista = new List<PersonajeDTO>();
@@ -71,7 +111,7 @@ namespace RivalsAnime.Controller
                     lista.Add(p);
                 }
 
-                reader.Close(); // 🔥 importante
+                reader.Close();
             }
             catch (Exception ex)
             {
@@ -79,6 +119,76 @@ namespace RivalsAnime.Controller
             }
 
             return lista;
+        }
+        public bool ActualizarPersonaje(PersonajeDTO p)
+        {
+            Conexion con = new Conexion();
+
+            using (MySqlConnection conn = con.establecerConexion())
+            {
+                if (conn == null) return false;
+
+                try
+                {
+                    string query = @"UPDATE personajes 
+            SET vida_base = @v,
+                ataque_base = @a,
+                defensa_base = @d,
+                nombre_habilidad = @h
+            WHERE nombre = @n";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@n", p.Nombre);
+                    cmd.Parameters.AddWithValue("@v", p.Vida);
+                    cmd.Parameters.AddWithValue("@a", p.Ataque);
+                    cmd.Parameters.AddWithValue("@d", p.Defensa);
+                    cmd.Parameters.AddWithValue("@h", p.Habilidad);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    // 🔥 comprobar si realmente se actualizó algo
+                    return filasAfectadas > 0;
+                }
+                catch (MySqlException ex)
+                {
+                    if (ex.Number == 1062)
+                    {
+                        MessageBox.Show("Nombre duplicado ❌");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actualizar: " + ex.Message);
+                    }
+                    return false;
+                }
+            }
+        }
+        public bool EliminarPersonaje(string nombre)
+        {
+            Conexion con = new Conexion();
+
+            using (MySqlConnection conn = con.establecerConexion())
+            {
+                if (conn == null) return false;
+
+                try
+                {
+                    string query = "DELETE FROM personajes WHERE nombre = @n";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@n", nombre);
+
+                    int filas = cmd.ExecuteNonQuery();
+
+                    return filas > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
+                    return false;
+                }
+            }
         }
     }
 }

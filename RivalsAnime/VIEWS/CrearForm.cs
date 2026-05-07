@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace RivalsAnime.VIEWS
 {
-    public partial class CrearForm : Form
+    public partial class CrearForm : BaseForm
     {
         private AdminForm adminForm;
 

@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Blue aura.ani" />
+    <None Remove="Resources\Blue aura.ani" />
+    <None Remove="Resources\Cursors\Goku.cur" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Blue aura.ani">
+    <Content Include="Resources\Cursors\Blue aura.ani">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cursors\Goku.cur">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -35,10 +39,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>

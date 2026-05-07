@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace RivalsAnime.VIEWS
 {
-    public partial class UserForm : Form
+    public partial class UserForm : BaseForm
     {
         public UserForm()
         {

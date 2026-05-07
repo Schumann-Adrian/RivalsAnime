@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RivalsAnime.VIEWS
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : BaseForm
     {
         public RegisterForm()
         {
