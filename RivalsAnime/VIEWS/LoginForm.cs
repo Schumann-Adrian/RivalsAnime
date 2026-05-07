@@ -30,6 +30,7 @@ namespace RivalsAnime
             string usuario = textBoxUsuarioLogin.Text.Trim();
             string contraseña = textBoxContraseñaLogin.Text.Trim();
 
+            // 🔴 VALIDACIÓN
             if (string.IsNullOrWhiteSpace(usuario) ||
                 string.IsNullOrWhiteSpace(contraseña))
             {
@@ -37,6 +38,7 @@ namespace RivalsAnime
                 return;
             }
 
+            // 🔐 HASH DE LA CONTRASEÑA
             string passwordHash = Hash(contraseña);
 
             UsuarioDTO dto = new UsuarioDTO()
@@ -47,32 +49,88 @@ namespace RivalsAnime
 
             UsuarioController controller = new UsuarioController();
 
-            int rol = controller.Login(dto);
+            int resultado = controller.Login(dto);
 
-            if (rol == -1)
+            // 🔍 RESULTADOS
+            if (resultado == -1)
             {
                 MessageBox.Show("Error en la conexión ❌");
             }
-            else if (rol == 0)
+            else if (resultado == 0)
             {
                 MessageBox.Show("Credenciales incorrectas ❌");
             }
-            else if (rol == 1) // ADMIN
+            else
+            {
+                MessageBox.Show("Login correcto ✅");
+
+                // 🎯 AQUÍ PUEDES REDIRIGIR SEGÚN ROL
+                if (resultado == 1) // Admin
+                {
+                    MessageBox.Show("Eres ADMIN 🔥");
+                }
+                else if (resultado == 2) // Usuario
+                {
+                    MessageBox.Show("Eres USUARIO 👤");
+                }
+
+                 
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegisterForm registro = new RegisterForm();
+            registro.Show();
+
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string usuario = textBoxUsuarioLogin.Text.Trim();
+            string contraseña = textBoxContraseñaLogin.Text.Trim();
+
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
+            {
+                MessageBox.Show("Completa todos los campos ❌");
+                return;
+            }
+
+            UsuarioDTO dto = new UsuarioDTO()
+            {
+                Usuario = usuario,
+                Password = Hash(contraseña) // 🔐 IMPORTANTE (igual que en registro)
+            };
+
+            UsuarioController service = new UsuarioController();
+
+            int rol = service.Login(dto);
+
+            if (rol == 1)
             {
                 MessageBox.Show("Bienvenido Admin 🛡️");
 
                 AdminForm admin = new AdminForm();
                 admin.Show();
-                this.Hide();
+                this.Close();
             }
-            else if (rol == 2) // USER
+            else if (rol == 2)
             {
                 MessageBox.Show("Bienvenido Usuario ⚔️");
 
                 UserForm user = new UserForm();
                 user.Show();
-                this.Hide();
+                this.Close();
             }
+            else if (rol == 0)
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos ❌");
+            }
+            else
+            {
+                MessageBox.Show("Error en el sistema ⚠️");
+            }
+            
         }
 
         private string Hash(string contraseña)
