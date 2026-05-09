@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,22 @@ namespace RivalsAnime.VIEWS
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnsalir_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void btnhistorial_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            HistorialForm historial = new HistorialForm();
+            historial.Show();
+        }
+
+        private void btnpersonajes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }
