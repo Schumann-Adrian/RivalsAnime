@@ -109,7 +109,7 @@
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
             pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox6.Location = new Point(446, 365);
+            pictureBox6.Location = new Point(442, 365);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(65, 73);
             pictureBox6.TabIndex = 5;
@@ -120,9 +120,9 @@
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox7.Location = new Point(540, 370);
+            pictureBox7.Location = new Point(541, 370);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(49, 58);
+            pictureBox7.Size = new Size(53, 68);
             pictureBox7.TabIndex = 6;
             pictureBox7.TabStop = false;
             // 
