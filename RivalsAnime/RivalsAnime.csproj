@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imagenes\Goku.png" />
     <None Remove="Resources\Blue aura.ani" />
     <None Remove="Resources\Cursors\Goku.cur" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Imagenes\Goku.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Cursors\Blue aura.ani">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

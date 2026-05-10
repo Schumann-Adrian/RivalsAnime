@@ -31,7 +31,8 @@ namespace RivalsAnime.VIEWS
         private void btnpersonajes_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+            PersonajesForm personaje = new PersonajesForm();
+            personaje.Show();
         }
     }
 }
