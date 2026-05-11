@@ -53,6 +53,7 @@
             btnbatalla.Size = new Size(134, 72);
             btnbatalla.TabIndex = 0;
             btnbatalla.UseVisualStyleBackColor = false;
+            btnbatalla.Click += btnbatalla_Click;
             // 
             // btnpersonajes
             // 

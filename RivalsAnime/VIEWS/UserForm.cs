@@ -34,5 +34,12 @@ namespace RivalsAnime.VIEWS
             PersonajesForm personaje = new PersonajesForm();
             personaje.Show();
         }
+
+        private void btnbatalla_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            BatallaForm batalla = new BatallaForm();
+            batalla.Show();
+        }
     }
 }

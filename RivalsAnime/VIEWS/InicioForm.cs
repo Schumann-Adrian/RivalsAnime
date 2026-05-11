@@ -1,3 +1,4 @@
+
 using RivalsAnime.VIEWS; 
 
 namespace RivalsAnime
@@ -8,7 +9,8 @@ namespace RivalsAnime
         {
             InitializeComponent();
 
-            
+            string ruta = Path.Combine(Application.StartupPath, "Resources", "unravel.mp3");
+            MusicManager.Play(ruta);
         }
 
         private void button1_Click(object sender, EventArgs e)

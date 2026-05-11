@@ -4,7 +4,6 @@ using System;
 using System.Text.Json;
 using System.Windows.Forms;
 using System.IO;
-using System.Text.Json;
 
 
 namespace RivalsAnime.VIEWS
