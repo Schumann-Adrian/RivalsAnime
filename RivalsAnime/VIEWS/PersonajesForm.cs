@@ -22,8 +22,8 @@ namespace RivalsAnime.VIEWS
             lisStats.Font = new Font("Consolas", 12, FontStyle.Bold);
             lisStats.ItemHeight = 20;
 
-            picPersonajeGrande.Location = new Point(250, 80);
-            picPersonajeGrande.Size = new Size(350, 300);
+            picPersonajeGrande.Location = new Point(100, 30);
+            picPersonajeGrande.Size = new Size(400, 350);
             picPersonajeGrande.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
@@ -67,6 +67,49 @@ namespace RivalsAnime.VIEWS
         private void Goku_Click(object sender, EventArgs e)
         {
             CargarPersonaje("Goku");
+        }
+
+        private void Naruto_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Naruto");
+        }
+
+        private void Edward_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Edward Elrick");
+        }
+
+        private void Vegetta_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Vegetta");
+        }
+
+        private void Luffy_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Luffy");
+        }
+
+        private void Freezer_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Freezer");
+        }
+
+        private void Ichigo_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Ichigo");
+
+        }
+
+        private void Saitama_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Saitama");
+
+        }
+
+        private void Zoro_Click(object sender, EventArgs e)
+        {
+            CargarPersonaje("Zoro");
+
         }
     }
 }

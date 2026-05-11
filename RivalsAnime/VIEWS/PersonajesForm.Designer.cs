@@ -74,6 +74,7 @@
             Naruto.Size = new Size(49, 58);
             Naruto.TabIndex = 1;
             Naruto.TabStop = false;
+            Naruto.Click += Naruto_Click;
             // 
             // Edward
             // 
@@ -85,6 +86,7 @@
             Edward.Size = new Size(49, 68);
             Edward.TabIndex = 2;
             Edward.TabStop = false;
+            Edward.Click += Edward_Click;
             // 
             // Vegetta
             // 
@@ -96,6 +98,7 @@
             Vegetta.Size = new Size(49, 58);
             Vegetta.TabIndex = 3;
             Vegetta.TabStop = false;
+            Vegetta.Click += Vegetta_Click;
             // 
             // Luffy
             // 
@@ -107,6 +110,7 @@
             Luffy.Size = new Size(49, 58);
             Luffy.TabIndex = 4;
             Luffy.TabStop = false;
+            Luffy.Click += Luffy_Click;
             // 
             // Freezer
             // 
@@ -118,6 +122,7 @@
             Freezer.Size = new Size(65, 73);
             Freezer.TabIndex = 5;
             Freezer.TabStop = false;
+            Freezer.Click += Freezer_Click;
             // 
             // Ichigo
             // 
@@ -129,6 +134,7 @@
             Ichigo.Size = new Size(53, 68);
             Ichigo.TabIndex = 6;
             Ichigo.TabStop = false;
+            Ichigo.Click += Ichigo_Click;
             // 
             // Saitama
             // 
@@ -140,6 +146,7 @@
             Saitama.Size = new Size(49, 58);
             Saitama.TabIndex = 7;
             Saitama.TabStop = false;
+            Saitama.Click += Saitama_Click;
             // 
             // Zoro
             // 
@@ -151,6 +158,7 @@
             Zoro.Size = new Size(49, 58);
             Zoro.TabIndex = 8;
             Zoro.TabStop = false;
+            Zoro.Click += Zoro_Click;
             // 
             // picPersonajeGrande
             // 

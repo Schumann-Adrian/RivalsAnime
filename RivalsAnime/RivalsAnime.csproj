@@ -9,13 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imagenes\Edward Elrick.png" />
+    <None Remove="Imagenes\Freezer.png" />
     <None Remove="Imagenes\Goku.png" />
+    <None Remove="Imagenes\Ichigo.png" />
+    <None Remove="Imagenes\Luffy.png" />
+    <None Remove="Imagenes\Naruto.png" />
+    <None Remove="Imagenes\Saitama.png" />
+    <None Remove="Imagenes\Vegetta.png" />
+    <None Remove="Imagenes\Zoro.png" />
     <None Remove="Resources\Blue aura.ani" />
     <None Remove="Resources\Cursors\Goku.cur" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Imagenes\Freezer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagenes\Goku.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Ichigo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Luffy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Naruto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Vegetta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Cursors\Blue aura.ani">
@@ -28,6 +51,24 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Imagenes\Edward Elrick.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Imagenes\Zoro.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Imagenes\Saitama.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
