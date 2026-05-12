@@ -11,7 +11,7 @@ public static class MusicManager
 
         player.URL = ruta;
         player.settings.setMode("loop", true);
-        player.settings.volume = 05;
+        player.settings.volume = 100;
         player.controls.play();
 
         sonando = true;
