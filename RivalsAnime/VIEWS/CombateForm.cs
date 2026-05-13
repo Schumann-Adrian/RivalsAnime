@@ -29,6 +29,8 @@ namespace RivalsAnime.VIEWS
             equipoJugador = jugador;
             equipoCPU = cpu;
 
+            panelNarracion.BackColor = Color.FromArgb(180, 0, 0, 0);
+
             this.Load += CombateForm_Load;
         }
 

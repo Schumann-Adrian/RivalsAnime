@@ -35,6 +35,7 @@
             progressCPU = new ProgressBar();
             btnAtaque = new Button();
             btnHabilidad = new Button();
+            panelNarracion = new Panel();
             ((System.ComponentModel.ISupportInitialize)picJugador1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCPU1).BeginInit();
             SuspendLayout();
@@ -43,9 +44,9 @@
             // 
             picJugador1.BackColor = Color.Transparent;
             picJugador1.BackgroundImageLayout = ImageLayout.Zoom;
-            picJugador1.Location = new Point(161, 123);
+            picJugador1.Location = new Point(105, 123);
             picJugador1.Name = "picJugador1";
-            picJugador1.Size = new Size(139, 97);
+            picJugador1.Size = new Size(201, 194);
             picJugador1.TabIndex = 0;
             picJugador1.TabStop = false;
             // 
@@ -55,7 +56,7 @@
             picCPU1.BackgroundImageLayout = ImageLayout.Zoom;
             picCPU1.Location = new Point(433, 123);
             picCPU1.Name = "picCPU1";
-            picCPU1.Size = new Size(139, 97);
+            picCPU1.Size = new Size(198, 194);
             picCPU1.TabIndex = 1;
             picCPU1.TabStop = false;
             // 
@@ -79,11 +80,16 @@
             btnAtaque.BackgroundImage = (Image)resources.GetObject("btnAtaque.BackgroundImage");
             btnAtaque.BackgroundImageLayout = ImageLayout.Stretch;
             btnAtaque.FlatAppearance.BorderSize = 0;
+            btnAtaque.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnAtaque.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnAtaque.FlatStyle = FlatStyle.Flat;
+            btnAtaque.Font = new Font("Stencil", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAtaque.ForeColor = Color.OrangeRed;
             btnAtaque.Location = new Point(69, 323);
             btnAtaque.Name = "btnAtaque";
             btnAtaque.Size = new Size(160, 103);
             btnAtaque.TabIndex = 4;
+            btnAtaque.Text = "ATAQUE";
             btnAtaque.UseVisualStyleBackColor = false;
             btnAtaque.Click += btnAtaque_Click_1;
             // 
@@ -93,13 +99,29 @@
             btnHabilidad.BackgroundImage = (Image)resources.GetObject("btnHabilidad.BackgroundImage");
             btnHabilidad.BackgroundImageLayout = ImageLayout.Stretch;
             btnHabilidad.FlatAppearance.BorderSize = 0;
+            btnHabilidad.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnHabilidad.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnHabilidad.FlatStyle = FlatStyle.Flat;
+            btnHabilidad.Font = new Font("Stencil", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHabilidad.ForeColor = Color.OrangeRed;
             btnHabilidad.Location = new Point(256, 318);
             btnHabilidad.Name = "btnHabilidad";
             btnHabilidad.Size = new Size(157, 112);
             btnHabilidad.TabIndex = 5;
+            btnHabilidad.Text = "HABILIDAD";
             btnHabilidad.UseVisualStyleBackColor = false;
             btnHabilidad.Click += btnHabilidad_Click_1;
+            // 
+            // panelNarracion
+            // 
+            panelNarracion.BackColor = SystemColors.Control;
+            panelNarracion.Dock = DockStyle.Bottom;
+            panelNarracion.Location = new Point(0, 350);
+            panelNarracion.MaximumSize = new Size(0, 100);
+            panelNarracion.Name = "panelNarracion";
+            panelNarracion.Size = new Size(800, 100);
+            panelNarracion.TabIndex = 6;
+            panelNarracion.Visible = false;
             // 
             // CombateForm
             // 
@@ -108,6 +130,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelNarracion);
             Controls.Add(btnHabilidad);
             Controls.Add(btnAtaque);
             Controls.Add(progressCPU);
@@ -129,5 +152,6 @@
         private ProgressBar progressCPU;
         private Button btnAtaque;
         private Button btnHabilidad;
+        private Panel panelNarracion;
     }
 }
