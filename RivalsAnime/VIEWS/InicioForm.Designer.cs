@@ -54,7 +54,7 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // Form1
+            // InicioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -62,9 +62,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1043, 534);
             Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            Name = "Form1";
+            Name = "InicioForm";
             Text = "Form1";
             ResumeLayout(false);
         }

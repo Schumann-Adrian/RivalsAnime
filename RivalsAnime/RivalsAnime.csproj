@@ -20,18 +20,24 @@
     <None Remove="Imagenes\Zoro.png" />
     <None Remove="Resources\Blue aura.ani" />
     <None Remove="Resources\Cursors\Goku.cur" />
+    <None Remove="Resources\GIFS proyecto\Edward Elrickizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Ewardderecha.gif" />
     <None Remove="Resources\GIFS proyecto\freezerderecha.gif" />
+    <None Remove="Resources\GIFS proyecto\Freezerizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\gokuderecha.gif" />
     <None Remove="Resources\GIFS proyecto\gokuizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Ichigoderecha.gif" />
+    <None Remove="Resources\GIFS proyecto\Ichigoizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Luffyderecha.gif" />
+    <None Remove="Resources\GIFS proyecto\Luffyizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Narutoderecha.gif" />
+    <None Remove="Resources\GIFS proyecto\Narutoizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Saitamaderecha.gif" />
     <None Remove="Resources\GIFS proyecto\Saitamaizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Vegettaderecha.gif" />
     <None Remove="Resources\GIFS proyecto\Vegettaizquierda.gif" />
     <None Remove="Resources\GIFS proyecto\Zoroderecha.gif" />
+    <None Remove="Resources\GIFS proyecto\Zoroizquierda.gif" />
     <None Remove="Resources\unravel.mp3" />
   </ItemGroup>
 
@@ -84,7 +90,13 @@
     <Content Include="Resources\GIFS proyecto\Edward Elrickderecha.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\GIFS proyecto\Edward Elrickizquierda.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\GIFS proyecto\freezerderecha.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GIFS proyecto\Freezerizquierda.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\GIFS proyecto\gokuderecha.gif">
@@ -94,6 +106,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\GIFS proyecto\Ichigoderecha.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GIFS proyecto\Ichigoizquierda.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\GIFS proyecto\Luffyderecha.gif">
@@ -140,6 +155,24 @@
 
   <ItemGroup>
     <Content Include="Imagenes\Saitama.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\GIFS proyecto\Luffyizquierda.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\GIFS proyecto\Narutoizquierda.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\GIFS proyecto\Zoroizquierda.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
