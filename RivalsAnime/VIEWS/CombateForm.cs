@@ -310,15 +310,6 @@ namespace RivalsAnime.VIEWS
                     ganoJugador ? 0 : 1
                 );
             }
-
-            foreach (var p in equipoCPU)
-            {
-                controller.GuardarHistorial(
-                    p.IdPersonaje,
-                    !ganoJugador ? 1 : 0,
-                    !ganoJugador ? 0 : 1
-                );
-            }
         }
 
         private async void btnAtaque_Click_1(object sender, EventArgs e)

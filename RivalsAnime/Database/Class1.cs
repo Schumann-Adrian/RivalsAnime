@@ -12,13 +12,21 @@ namespace RivalsAnime.Database
         private string usuario = "root"; // Usuario por defecto de HeidiSQL
         private string password = "123456789";
 
-        public MySqlConnection establecerConexion()
+        public MySqlConnection? establecerConexion()
         {
             string cadenaconexion = $"server={servidor};database={bd};uid={usuario};pwd={password};";
             MySqlConnection conexion = new MySqlConnection(cadenaconexion);
-            conexion.Open();
 
-            return conexion;
+            try
+            {
+                conexion.Open();
+                return conexion;
+            }
+            catch
+            {
+                conexion.Dispose();
+                return null;
+            }
         }
     }
 }

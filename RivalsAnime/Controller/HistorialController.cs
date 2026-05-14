@@ -9,19 +9,45 @@ namespace RivalsAnime.Controller
     {
         private readonly string conexion =
             "Server=localhost;Database=batallaanimedb;Uid=root;Pwd=123456789;";
+
+        private void AsegurarColumnaJugador(MySqlConnection conn)
+        {
+            string comprobarColumna = @"
+SELECT COUNT(*)
+FROM information_schema.COLUMNS
+WHERE TABLE_SCHEMA = DATABASE()
+  AND TABLE_NAME = 'historial_personajes'
+  AND COLUMN_NAME = 'Es_jugador'";
+
+            MySqlCommand comprobarCmd = new MySqlCommand(comprobarColumna, conn);
+            int existe = Convert.ToInt32(comprobarCmd.ExecuteScalar());
+
+            if (existe == 0)
+            {
+                string crearColumna = @"
+ALTER TABLE historial_personajes
+ADD COLUMN Es_jugador TINYINT(1) NOT NULL DEFAULT 0";
+
+                MySqlCommand crearCmd = new MySqlCommand(crearColumna, conn);
+                crearCmd.ExecuteNonQuery();
+            }
+        }
+
         public void GuardarHistorial(int idPersonaje, int victorias, int derrotas)
         {
             using (MySqlConnection conn = new MySqlConnection(
                 "server=localhost;database=batallaanimedb;uid=root;pwd=123456789;"))
             {
                 conn.Open();
+                AsegurarColumnaJugador(conn);
 
                 string query = @"
-INSERT INTO historial_personajes (Id_personaje, Victorias, Derrotas)
-VALUES (@id, @v, @d)
+INSERT INTO historial_personajes (Id_personaje, Victorias, Derrotas, Es_jugador)
+VALUES (@id, @v, @d, 1)
 ON DUPLICATE KEY UPDATE
     Victorias = Victorias + @v,
-    Derrotas = Derrotas + @d";
+    Derrotas = Derrotas + @d,
+    Es_jugador = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -40,6 +66,7 @@ ON DUPLICATE KEY UPDATE
                 "server=localhost;database=batallaanimedb;uid=root;pwd=123456789;"))
             {
                 conn.Open();
+                AsegurarColumnaJugador(conn);
 
                 string query = @"
 SELECT 
@@ -51,7 +78,8 @@ SELECT
     (h.Victorias * 100.0 / (h.Victorias + h.Derrotas)) AS WinRate
 FROM historial_personajes h
 INNER JOIN personajes p 
-    ON h.Id_personaje = p.Id_personaje";
+    ON h.Id_personaje = p.Id_personaje
+WHERE h.Es_jugador = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
