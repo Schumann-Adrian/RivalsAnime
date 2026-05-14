@@ -69,6 +69,9 @@
     <Content Include="Imagenes\Goku.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Imagenes\IconoProyecto.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagenes\Ichigo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
