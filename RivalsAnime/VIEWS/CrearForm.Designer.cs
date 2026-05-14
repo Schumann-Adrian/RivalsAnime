@@ -40,6 +40,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            btnsalir = new Button();
             SuspendLayout();
             // 
             // button1
@@ -154,6 +155,22 @@
             label4.TabIndex = 14;
             label4.Text = "Habilidad (Ultimate)";
             // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(26, 352);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 15;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
+            // 
             // CrearForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -161,6 +178,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnsalir);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -191,5 +209,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Button btnsalir;
     }
 }

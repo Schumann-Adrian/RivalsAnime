@@ -211,5 +211,12 @@ namespace RivalsAnime.VIEWS
         {
             SeleccionarPersonaje("Zoro");
         }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            UserForm user = new UserForm();
+            user.Show();
+        }
     }
 }

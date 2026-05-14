@@ -34,6 +34,7 @@
             btnActualizar = new Button();
             btnEliminar = new Button();
             dataGridPersonajes = new DataGridView();
+            btnsalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridPersonajes).BeginInit();
             SuspendLayout();
             // 
@@ -107,8 +108,24 @@
             dataGridPersonajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridPersonajes.Location = new Point(12, 84);
             dataGridPersonajes.Name = "dataGridPersonajes";
-            dataGridPersonajes.Size = new Size(776, 354);
+            dataGridPersonajes.Size = new Size(779, 291);
             dataGridPersonajes.TabIndex = 10;
+            // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(657, 381);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 11;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
             // 
             // AdminForm
             // 
@@ -117,6 +134,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnsalir);
             Controls.Add(dataGridPersonajes);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
@@ -134,5 +152,6 @@
         private Button btnActualizar;
         private Button btnEliminar;
         private DataGridView dataGridPersonajes;
+        private Button btnsalir;
     }
 }

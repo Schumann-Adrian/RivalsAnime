@@ -36,8 +36,10 @@
             btnAtaque = new Button();
             btnHabilidad = new Button();
             panelNarracion = new Panel();
+            lblNarracion = new Label();
             ((System.ComponentModel.ISupportInitialize)picJugador1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCPU1).BeginInit();
+            panelNarracion.SuspendLayout();
             SuspendLayout();
             // 
             // picJugador1
@@ -115,6 +117,7 @@
             // panelNarracion
             // 
             panelNarracion.BackColor = SystemColors.Control;
+            panelNarracion.Controls.Add(lblNarracion);
             panelNarracion.Dock = DockStyle.Bottom;
             panelNarracion.Location = new Point(0, 350);
             panelNarracion.MaximumSize = new Size(0, 100);
@@ -122,6 +125,18 @@
             panelNarracion.Size = new Size(800, 100);
             panelNarracion.TabIndex = 6;
             panelNarracion.Visible = false;
+            // 
+            // lblNarracion
+            // 
+            lblNarracion.AutoSize = true;
+            lblNarracion.Dock = DockStyle.Fill;
+            lblNarracion.Font = new Font("Stencil", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNarracion.ForeColor = SystemColors.Control;
+            lblNarracion.Location = new Point(0, 0);
+            lblNarracion.Name = "lblNarracion";
+            lblNarracion.Size = new Size(0, 25);
+            lblNarracion.TabIndex = 7;
+            lblNarracion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CombateForm
             // 
@@ -141,6 +156,8 @@
             Text = "CombateForm";
             ((System.ComponentModel.ISupportInitialize)picJugador1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCPU1).EndInit();
+            panelNarracion.ResumeLayout(false);
+            panelNarracion.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -153,5 +170,6 @@
         private Button btnAtaque;
         private Button btnHabilidad;
         private Panel panelNarracion;
+        private Label lblNarracion;
     }
 }

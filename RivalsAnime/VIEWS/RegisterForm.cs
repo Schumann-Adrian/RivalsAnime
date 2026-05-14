@@ -25,7 +25,7 @@ namespace RivalsAnime.VIEWS
 
             comboRol.SelectedIndex = 0;
 
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,6 +97,13 @@ namespace RivalsAnime.VIEWS
         {
 
             comboRol.SelectedIndex = 0;
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm(); 
+            loginForm.Show();
         }
     }
 }

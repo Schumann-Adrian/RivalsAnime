@@ -21,7 +21,7 @@ namespace RivalsAnime.VIEWS
         {
             InitializeComponent();
 
-            
+
 
             lisStats.BackColor = Color.FromArgb(30, 30, 30);
             lisStats.ForeColor = Color.White;
@@ -155,5 +155,11 @@ namespace RivalsAnime.VIEWS
             CargarPersonaje("Zoro");
         }
 
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            UserForm user = new UserForm();
+            user.Show();
+        }
     }
 }

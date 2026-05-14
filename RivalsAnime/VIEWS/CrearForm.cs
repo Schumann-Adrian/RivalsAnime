@@ -65,5 +65,12 @@ namespace RivalsAnime.VIEWS
                 MessageBox.Show("Error al crear ❌");
             }
         }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdminForm adminForm = new AdminForm(); 
+            adminForm.Show();
+        }
     }
 }

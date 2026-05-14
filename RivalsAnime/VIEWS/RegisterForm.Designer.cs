@@ -33,6 +33,7 @@
             textBoxUsuario = new TextBox();
             textBoxContraseña = new TextBox();
             comboRol = new ComboBox();
+            btnsalir = new Button();
             SuspendLayout();
             // 
             // button1
@@ -84,6 +85,22 @@
             comboRol.TabIndex = 5;
             comboRol.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(654, 362);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 6;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
+            // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -91,6 +108,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnsalir);
             Controls.Add(comboRol);
             Controls.Add(textBoxContraseña);
             Controls.Add(textBoxUsuario);
@@ -107,5 +125,6 @@
         private TextBox textBoxUsuario;
         private TextBox textBoxContraseña;
         private ComboBox comboRol;
+        private Button btnsalir;
     }
 }

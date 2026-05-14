@@ -40,6 +40,7 @@
             Zoro = new PictureBox();
             picPersonajeGrande = new PictureBox();
             lisStats = new ListBox();
+            btnsalir = new Button();
             ((System.ComponentModel.ISupportInitialize)Goku).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Naruto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Edward).BeginInit();
@@ -178,6 +179,22 @@
             lisStats.Size = new Size(189, 274);
             lisStats.TabIndex = 11;
             // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(1, 12);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 12;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
+            // 
             // PersonajesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -185,6 +202,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnsalir);
             Controls.Add(lisStats);
             Controls.Add(picPersonajeGrande);
             Controls.Add(Zoro);
@@ -224,5 +242,6 @@
         private PictureBox Zoro;
         private PictureBox picPersonajeGrande;
         private ListBox lisStats;
+        private Button btnsalir;
     }
 }

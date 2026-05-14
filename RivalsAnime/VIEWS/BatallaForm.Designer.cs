@@ -43,6 +43,7 @@
             button2 = new Button();
             stats2 = new ListBox();
             stats1 = new ListBox();
+            btnsalir = new Button();
             ((System.ComponentModel.ISupportInitialize)Goku).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Naruto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Edward).BeginInit();
@@ -222,6 +223,22 @@
             stats1.Size = new Size(165, 214);
             stats1.TabIndex = 17;
             // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(12, 12);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 18;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
+            // 
             // BatallaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -229,6 +246,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnsalir);
             Controls.Add(stats1);
             Controls.Add(stats2);
             Controls.Add(button2);
@@ -276,5 +294,6 @@
         private Button button2;
         private ListBox stats2;
         private ListBox stats1;
+        private Button btnsalir;
     }
 }

@@ -190,5 +190,12 @@ namespace RivalsAnime.VIEWS
                 MessageBox.Show("No se pudo eliminar ❌");
             }
         }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
     }
 }
