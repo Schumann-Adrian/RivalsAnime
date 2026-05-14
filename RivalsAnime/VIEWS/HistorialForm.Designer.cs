@@ -29,19 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialForm));
-            datagridHistorial = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)datagridHistorial).BeginInit();
+            dgvHistorial = new DataGridView();
+            btnsalir = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvHistorial).BeginInit();
             SuspendLayout();
             // 
-            // datagridHistorial
+            // dgvHistorial
             // 
-            datagridHistorial.AccessibleDescription = "datagridHistorial";
-            datagridHistorial.AccessibleName = "datagridHistorial";
-            datagridHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            datagridHistorial.Location = new Point(12, 88);
-            datagridHistorial.Name = "datagridHistorial";
-            datagridHistorial.Size = new Size(776, 350);
-            datagridHistorial.TabIndex = 0;
+            dgvHistorial.AccessibleDescription = "dgvHistorial";
+            dgvHistorial.AccessibleName = "datagridHistorial";
+            dgvHistorial.AllowUserToAddRows = false;
+            dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistorial.Location = new Point(12, 88);
+            dgvHistorial.Name = "dgvHistorial";
+            dgvHistorial.ReadOnly = true;
+            dgvHistorial.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvHistorial.Size = new Size(776, 350);
+            dgvHistorial.TabIndex = 0;
+            // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(12, 12);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 19;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
             // 
             // HistorialForm
             // 
@@ -51,15 +72,18 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(datagridHistorial);
+            Controls.Add(btnsalir);
+            Controls.Add(dgvHistorial);
             Name = "HistorialForm";
             Text = "HistorialForm";
-            ((System.ComponentModel.ISupportInitialize)datagridHistorial).EndInit();
+            Load += HistorialForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvHistorial).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView datagridHistorial;
+        private DataGridView dgvHistorial;
+        private Button btnsalir;
     }
 }

@@ -8,7 +8,7 @@ namespace RivalsAnime.Controller
     internal class HistorialController
     {
         private readonly string conexion =
-            "Server=localhost;Database=RivalsAnime;Uid=root;Pwd=;";
+            "Server=localhost;Database=batallaanimedb;Uid=root;Pwd=123456789;";
 
         public List<HistorialDTO> ObtenerHistorial()
         {
@@ -29,7 +29,7 @@ namespace RivalsAnime.Controller
                         h.victorias,
                         h.derrotas,
                         h.winrate
-                    FROM historial h
+                    FROM historial_personajes h
                     INNER JOIN personajes p
                         ON h.id_personaje = p.id_personaje
                     ORDER BY h.victorias DESC;";

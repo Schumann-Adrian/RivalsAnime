@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using RivalsAnime.Controller;
 using RivalsAnime.Database;
+using RivalsAnime.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,38 +15,65 @@ namespace RivalsAnime.VIEWS
     public partial class HistorialForm : BaseForm
     {
 
-        MySqlConnection con;
+        HistorialController controller =
+             new HistorialController();
+
         public HistorialForm()
         {
             InitializeComponent();
         }
+
+        private void CargarHistorial()
+        {
+            try
+            {
+                List<HistorialDTO> lista =
+                    controller.ObtenerHistorial();
+
+                dgvHistorial.DataSource = null;
+                dgvHistorial.DataSource = lista;
+
+                // OCULTAR COLUMNAS
+                dgvHistorial.Columns["IdHistorial"].Visible = false;
+                dgvHistorial.Columns["IdPersonaje"].Visible = false;
+
+                // CAMBIAR TITULOS
+                dgvHistorial.Columns["Personaje"].HeaderText =
+                    "Personaje";
+
+                dgvHistorial.Columns["Victorias"].HeaderText =
+                    "Victorias";
+
+                dgvHistorial.Columns["Derrotas"].HeaderText =
+                    "Derrotas";
+
+                dgvHistorial.Columns["WinRate"].HeaderText =
+                    "Win Rate %";
+
+                // FORMATO %
+                dgvHistorial.Columns["WinRate"]
+                    .DefaultCellStyle.Format = "0.00'%'";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         private void HistorialForm_Load(object sender, EventArgs e)
         {
             CargarHistorial();
         }
 
-        private void CargarHistorial()
+        private void btnsalir_Click(object sender, EventArgs e)
         {
-            string query = @"SELECT 
-                        u.nombre AS Usuario,
-                        p.nombre AS Personaje,
-                        h.victorias,
-                        h.derrotas,
-                        h.winrate
-                        FROM historial h
-                        JOIN usuario u ON h.id_persona = u.id_persona
-                        JOIN personajes p ON h.id_personaje = p.id_personaje
-                        ORDER BY p.nombre, h.winrate DESC";
-
-            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            datagridHistorial.DataSource = dt;
-
-            // Estética
-            datagridHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            datagridHistorial.ReadOnly = true;
+            this.Close();
+            UserForm user = new UserForm();
+            user.Show();
         }
     }
 }
