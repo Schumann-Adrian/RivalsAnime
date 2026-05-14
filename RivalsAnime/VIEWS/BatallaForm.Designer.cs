@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BatallaForm));
             Goku = new PictureBox();
             Naruto = new PictureBox();
             Edward = new PictureBox();
@@ -60,7 +59,7 @@
             // Goku
             // 
             Goku.BackColor = Color.Transparent;
-            Goku.BackgroundImage = (Image)resources.GetObject("Goku.BackgroundImage");
+            Goku.BackgroundImage = Properties.Resources.Goku;
             Goku.BackgroundImageLayout = ImageLayout.Stretch;
             Goku.Location = new Point(47, 371);
             Goku.Name = "Goku";
@@ -72,7 +71,7 @@
             // Naruto
             // 
             Naruto.BackColor = Color.Transparent;
-            Naruto.BackgroundImage = (Image)resources.GetObject("Naruto.BackgroundImage");
+            Naruto.BackgroundImage = Properties.Resources.Naruto;
             Naruto.BackgroundImageLayout = ImageLayout.Stretch;
             Naruto.Location = new Point(130, 371);
             Naruto.Name = "Naruto";
@@ -84,7 +83,7 @@
             // Edward
             // 
             Edward.BackColor = Color.Transparent;
-            Edward.BackgroundImage = (Image)resources.GetObject("Edward.BackgroundImage");
+            Edward.BackgroundImage = Properties.Resources.edw;
             Edward.BackgroundImageLayout = ImageLayout.Stretch;
             Edward.Location = new Point(209, 370);
             Edward.Name = "Edward";
@@ -96,7 +95,7 @@
             // Vegetta
             // 
             Vegetta.BackColor = Color.Transparent;
-            Vegetta.BackgroundImage = (Image)resources.GetObject("Vegetta.BackgroundImage");
+            Vegetta.BackgroundImage = Properties.Resources.Veggeta;
             Vegetta.BackgroundImageLayout = ImageLayout.Stretch;
             Vegetta.Location = new Point(293, 371);
             Vegetta.Name = "Vegetta";
@@ -108,7 +107,7 @@
             // Luffy
             // 
             Luffy.BackColor = Color.Transparent;
-            Luffy.BackgroundImage = (Image)resources.GetObject("Luffy.BackgroundImage");
+            Luffy.BackgroundImage = Properties.Resources.Luffy;
             Luffy.BackgroundImageLayout = ImageLayout.Stretch;
             Luffy.Location = new Point(376, 370);
             Luffy.Name = "Luffy";
@@ -120,7 +119,7 @@
             // Freezer
             // 
             Freezer.BackColor = Color.Transparent;
-            Freezer.BackgroundImage = (Image)resources.GetObject("Freezer.BackgroundImage");
+            Freezer.BackgroundImage = Properties.Resources.Freezer;
             Freezer.BackgroundImageLayout = ImageLayout.Stretch;
             Freezer.Location = new Point(444, 365);
             Freezer.Name = "Freezer";
@@ -132,7 +131,7 @@
             // Ichigo
             // 
             Ichigo.BackColor = Color.Transparent;
-            Ichigo.BackgroundImage = (Image)resources.GetObject("Ichigo.BackgroundImage");
+            Ichigo.BackgroundImage = Properties.Resources.Ichigo;
             Ichigo.BackgroundImageLayout = ImageLayout.Stretch;
             Ichigo.Location = new Point(539, 370);
             Ichigo.Name = "Ichigo";
@@ -144,7 +143,7 @@
             // Saitama
             // 
             Saitama.BackColor = Color.Transparent;
-            Saitama.BackgroundImage = (Image)resources.GetObject("Saitama.BackgroundImage");
+            Saitama.BackgroundImage = Properties.Resources.Saitama;
             Saitama.BackgroundImageLayout = ImageLayout.Stretch;
             Saitama.Location = new Point(623, 370);
             Saitama.Name = "Saitama";
@@ -156,7 +155,7 @@
             // Zoro
             // 
             Zoro.BackColor = Color.Transparent;
-            Zoro.BackgroundImage = (Image)resources.GetObject("Zoro.BackgroundImage");
+            Zoro.BackgroundImage = Properties.Resources.Zoro;
             Zoro.BackgroundImageLayout = ImageLayout.Stretch;
             Zoro.Location = new Point(705, 370);
             Zoro.Name = "Zoro";
@@ -188,7 +187,7 @@
             // button2
             // 
             button2.BackColor = Color.Transparent;
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImage = Properties.Resources.Boton_vacio;
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.Cursor = Cursors.NoMove2D;
             button2.FlatAppearance.BorderSize = 0;
@@ -226,7 +225,7 @@
             // btnsalir
             // 
             btnsalir.BackColor = Color.Transparent;
-            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImage = Properties.Resources.SalirBoton;
             btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnsalir.FlatAppearance.BorderSize = 0;
             btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -243,7 +242,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.FondoBasico;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(btnsalir);

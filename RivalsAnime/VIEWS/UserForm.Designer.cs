@@ -42,7 +42,7 @@
             // btnbatalla
             // 
             btnbatalla.BackColor = Color.Transparent;
-            btnbatalla.BackgroundImage = (Image)resources.GetObject("btnbatalla.BackgroundImage");
+            btnbatalla.BackgroundImage = Properties.Resources.BatallaBoton;
             btnbatalla.BackgroundImageLayout = ImageLayout.Stretch;
             btnbatalla.FlatAppearance.BorderSize = 0;
             btnbatalla.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -58,15 +58,15 @@
             // btnpersonajes
             // 
             btnpersonajes.BackColor = Color.Transparent;
-            btnpersonajes.BackgroundImage = (Image)resources.GetObject("btnpersonajes.BackgroundImage");
+            btnpersonajes.BackgroundImage = Properties.Resources.Personajesboton;
             btnpersonajes.BackgroundImageLayout = ImageLayout.Stretch;
             btnpersonajes.FlatAppearance.BorderSize = 0;
             btnpersonajes.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnpersonajes.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnpersonajes.FlatStyle = FlatStyle.Flat;
-            btnpersonajes.Location = new Point(451, 120);
+            btnpersonajes.Location = new Point(433, 112);
             btnpersonajes.Name = "btnpersonajes";
-            btnpersonajes.Size = new Size(137, 69);
+            btnpersonajes.Size = new Size(145, 88);
             btnpersonajes.TabIndex = 1;
             btnpersonajes.UseVisualStyleBackColor = false;
             btnpersonajes.Click += btnpersonajes_Click;
@@ -74,7 +74,7 @@
             // btnhistorial
             // 
             btnhistorial.BackColor = Color.Transparent;
-            btnhistorial.BackgroundImage = (Image)resources.GetObject("btnhistorial.BackgroundImage");
+            btnhistorial.BackgroundImage = Properties.Resources.HistorialBoton;
             btnhistorial.BackgroundImageLayout = ImageLayout.Stretch;
             btnhistorial.FlatAppearance.BorderSize = 0;
             btnhistorial.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -90,7 +90,7 @@
             // btnsalir
             // 
             btnsalir.BackColor = Color.Transparent;
-            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImage = Properties.Resources.SalirBoton;
             btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnsalir.FlatAppearance.BorderSize = 0;
             btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -128,7 +128,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.FondoBasico;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox2);

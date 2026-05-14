@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             btnLeer = new Button();
             button1 = new Button();
             btnActualizar = new Button();
@@ -41,7 +40,7 @@
             // btnLeer
             // 
             btnLeer.BackColor = Color.Transparent;
-            btnLeer.BackgroundImage = (Image)resources.GetObject("btnLeer.BackgroundImage");
+            btnLeer.BackgroundImage = Properties.Resources.Leerboton;
             btnLeer.BackgroundImageLayout = ImageLayout.Stretch;
             btnLeer.FlatAppearance.BorderSize = 0;
             btnLeer.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -57,7 +56,7 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImage = Properties.Resources.CrearBoton;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -74,7 +73,7 @@
             // btnActualizar
             // 
             btnActualizar.BackColor = Color.Transparent;
-            btnActualizar.BackgroundImage = (Image)resources.GetObject("btnActualizar.BackgroundImage");
+            btnActualizar.BackgroundImage = Properties.Resources.ActualizarBoton;
             btnActualizar.BackgroundImageLayout = ImageLayout.Stretch;
             btnActualizar.FlatAppearance.BorderSize = 0;
             btnActualizar.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -90,7 +89,7 @@
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.Transparent;
-            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImage = Properties.Resources.EliminarBoton;
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -114,7 +113,7 @@
             // btnsalir
             // 
             btnsalir.BackColor = Color.Transparent;
-            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImage = Properties.Resources.SalirBoton;
             btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnsalir.FlatAppearance.BorderSize = 0;
             btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -131,7 +130,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.FondoBasico;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(btnsalir);
