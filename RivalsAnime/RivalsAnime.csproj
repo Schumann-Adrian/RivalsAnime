@@ -194,4 +194,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Imagenes\" />
+  </ItemGroup>
+
 </Project>

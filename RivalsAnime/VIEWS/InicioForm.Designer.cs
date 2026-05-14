@@ -58,7 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.Inicio;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1043, 534);
             Controls.Add(button1);
