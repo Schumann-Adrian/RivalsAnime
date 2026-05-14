@@ -4,6 +4,7 @@ namespace RivalsAnime.Model
 {
     public class PersonajeDTO
     {
+        public int IdPersonaje { get; set; }
         public string Nombre { get; set; } = "";
         public int Vida { get; set; }
         public int Ataque { get; set; }

@@ -92,7 +92,15 @@ namespace RivalsAnime.Controller
 
             try
             {
-                string query = "SELECT * FROM personajes";
+                string query = @"
+            SELECT 
+                Id_personaje,
+                nombre,
+                vida_base,
+                ataque_base,
+                defensa_base,
+                nombre_habilidad
+            FROM personajes";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -101,6 +109,7 @@ namespace RivalsAnime.Controller
                 {
                     PersonajeDTO p = new PersonajeDTO()
                     {
+                        IdPersonaje = Convert.ToInt32(reader["Id_personaje"]),
                         Nombre = reader["nombre"].ToString(),
                         Vida = Convert.ToInt32(reader["vida_base"]),
                         Ataque = Convert.ToInt32(reader["ataque_base"]),
@@ -116,6 +125,10 @@ namespace RivalsAnime.Controller
             catch (Exception ex)
             {
                 MessageBox.Show("Error al leer: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
 
             return lista;

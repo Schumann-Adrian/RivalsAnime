@@ -188,7 +188,7 @@
             btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnsalir.FlatStyle = FlatStyle.Flat;
-            btnsalir.Location = new Point(1, 12);
+            btnsalir.Location = new Point(654, 7);
             btnsalir.Name = "btnsalir";
             btnsalir.Size = new Size(134, 66);
             btnsalir.TabIndex = 12;

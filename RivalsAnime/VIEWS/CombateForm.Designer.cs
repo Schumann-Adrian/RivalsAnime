@@ -37,6 +37,7 @@
             btnHabilidad = new Button();
             panelNarracion = new Panel();
             lblNarracion = new Label();
+            btnsalir = new Button();
             ((System.ComponentModel.ISupportInitialize)picJugador1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCPU1).BeginInit();
             panelNarracion.SuspendLayout();
@@ -138,6 +139,22 @@
             lblNarracion.TabIndex = 7;
             lblNarracion.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnsalir
+            // 
+            btnsalir.BackColor = Color.Transparent;
+            btnsalir.BackgroundImage = (Image)resources.GetObject("btnsalir.BackgroundImage");
+            btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnsalir.FlatAppearance.BorderSize = 0;
+            btnsalir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnsalir.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnsalir.FlatStyle = FlatStyle.Flat;
+            btnsalir.Location = new Point(654, 12);
+            btnsalir.Name = "btnsalir";
+            btnsalir.Size = new Size(134, 66);
+            btnsalir.TabIndex = 16;
+            btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
+            // 
             // CombateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,6 +162,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnsalir);
             Controls.Add(panelNarracion);
             Controls.Add(btnHabilidad);
             Controls.Add(btnAtaque);
@@ -171,5 +189,6 @@
         private Button btnHabilidad;
         private Panel panelNarracion;
         private Label lblNarracion;
+        private Button btnsalir;
     }
 }

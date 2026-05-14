@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialForm));
             dgvHistorial = new DataGridView();
             btnsalir = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHistorial).BeginInit();
             SuspendLayout();
             // 
@@ -64,6 +65,25 @@
             btnsalir.UseVisualStyleBackColor = false;
             btnsalir.Click += btnsalir_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Stencil", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.OrangeRed;
+            button1.Location = new Point(626, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(162, 86);
+            button1.TabIndex = 20;
+            button1.Text = "EXPORTAR";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // HistorialForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -72,6 +92,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(btnsalir);
             Controls.Add(dgvHistorial);
             Name = "HistorialForm";
@@ -85,5 +106,6 @@
 
         private DataGridView dgvHistorial;
         private Button btnsalir;
+        private Button button1;
     }
 }
