@@ -16,17 +16,9 @@ namespace RivalsAnime.Database
         {
             string cadenaconexion = $"server={servidor};database={bd};uid={usuario};pwd={password};";
             MySqlConnection conexion = new MySqlConnection(cadenaconexion);
+            conexion.Open();
 
-            try
-            {
-                conexion.Open();
-                return conexion;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error al conectar a la base de datos: " + e.Message);
-                return null;
-            }
+            return conexion;
         }
     }
 }

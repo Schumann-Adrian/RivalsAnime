@@ -56,6 +56,9 @@ namespace RivalsAnime.VIEWS
             dataGridPersonajes.ReadOnly = false;
 
             // 🔥 NOMBRES BONITOS
+            if (dataGridPersonajes.Columns["IdPersonaje"] != null)
+                dataGridPersonajes.Columns["IdPersonaje"].Visible = false;
+
             dataGridPersonajes.Columns["Nombre"].HeaderText = "👤 Personaje";
             dataGridPersonajes.Columns["Vida"].HeaderText = "❤️ Vida";
             dataGridPersonajes.Columns["Ataque"].HeaderText = "⚔️ Ataque";
@@ -163,9 +166,10 @@ namespace RivalsAnime.VIEWS
             }
 
             DataGridViewRow fila = dataGridPersonajes.SelectedRows[0];
+
+            int idPersonaje = Convert.ToInt32(fila.Cells["IdPersonaje"].Value);
             string nombre = fila.Cells["Nombre"].Value.ToString();
 
-            // 🔥 confirmación (MUY IMPORTANTE)
             DialogResult confirm = MessageBox.Show(
                 $"¿Eliminar a {nombre}?",
                 "Confirmar eliminación",
@@ -177,13 +181,12 @@ namespace RivalsAnime.VIEWS
 
             PersonajeController controller = new PersonajeController();
 
-            bool resultado = controller.EliminarPersonaje(nombre);
+            bool resultado = controller.EliminarPersonaje(idPersonaje);
 
             if (resultado)
             {
                 MessageBox.Show("Personaje eliminado 🗑️");
-
-                CargarPersonajes(); // 🔥 refrescar tabla
+                CargarPersonajes();
             }
             else
             {

@@ -233,6 +233,16 @@ namespace RivalsAnime.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Personajes {
+            get {
+                object obj = ResourceManager.GetObject("Personajes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Personajesboton {
             get {
                 object obj = ResourceManager.GetObject("Personajesboton", resourceCulture);

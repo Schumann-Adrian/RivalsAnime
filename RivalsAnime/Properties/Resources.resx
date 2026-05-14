@@ -121,6 +121,9 @@
   <data name="BatallaBoton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\BatallaBoton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Saitama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\Saitama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EliminarBoton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\EliminarBoton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,9 +163,6 @@
   <data name="Veggeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\Veggeta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CrearBoton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\CrearBoton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +171,9 @@
   </data>
   <data name="Entrarboton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\Entrarboton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boton vacio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\Boton vacio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondoBasico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\FondoBasico.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,10 +187,10 @@
   <data name="Zoro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\Zoro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Saitama" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\Saitama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Boton vacio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\Boton vacio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Personajes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\Personajes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

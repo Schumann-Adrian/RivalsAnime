@@ -177,7 +177,9 @@ namespace RivalsAnime.Controller
                 }
             }
         }
-        public bool EliminarPersonaje(string nombre)
+
+
+        public bool EliminarPersonaje(int idPersonaje)
         {
             Conexion con = new Conexion();
 
@@ -185,19 +187,32 @@ namespace RivalsAnime.Controller
             {
                 if (conn == null) return false;
 
+                MySqlTransaction transaction = conn.BeginTransaction();
+
                 try
                 {
-                    string query = "DELETE FROM personajes WHERE nombre = @n";
+                    // 1. BORRAR HISTORIAL
+                    MySqlCommand cmdHistorial = new MySqlCommand(
+                        "DELETE FROM historial_personajes WHERE Id_personaje = @id",
+                        conn, transaction);
 
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@n", nombre);
+                    cmdHistorial.Parameters.AddWithValue("@id", idPersonaje);
+                    cmdHistorial.ExecuteNonQuery();
 
-                    int filas = cmd.ExecuteNonQuery();
+                    // 2. BORRAR PERSONAJE
+                    MySqlCommand cmdPersonaje = new MySqlCommand(
+                        "DELETE FROM personajes WHERE Id_personaje = @id",
+                        conn, transaction);
 
-                    return filas > 0;
+                    cmdPersonaje.Parameters.AddWithValue("@id", idPersonaje);
+                    int filasAfectadas = cmdPersonaje.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    return filasAfectadas > 0;
                 }
                 catch (Exception ex)
                 {
+                    transaction.Rollback();
                     MessageBox.Show("Error al eliminar: " + ex.Message);
                     return false;
                 }
