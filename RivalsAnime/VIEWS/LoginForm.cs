@@ -18,7 +18,7 @@ namespace RivalsAnime
         {
             InitializeComponent();
 
-            
+            textBoxContraseñaLogin.UseSystemPasswordChar = true;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
