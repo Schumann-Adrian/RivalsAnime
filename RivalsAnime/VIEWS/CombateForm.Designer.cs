@@ -92,6 +92,7 @@
             btnAtaque.Name = "btnAtaque";
             btnAtaque.Size = new Size(160, 103);
             btnAtaque.TabIndex = 4;
+            btnAtaque.TabStop = false;
             btnAtaque.Text = "ATAQUE";
             btnAtaque.UseVisualStyleBackColor = false;
             btnAtaque.Click += btnAtaque_Click_1;
@@ -111,6 +112,7 @@
             btnHabilidad.Name = "btnHabilidad";
             btnHabilidad.Size = new Size(157, 112);
             btnHabilidad.TabIndex = 5;
+            btnHabilidad.TabStop = false;
             btnHabilidad.Text = "HABILIDAD";
             btnHabilidad.UseVisualStyleBackColor = false;
             btnHabilidad.Click += btnHabilidad_Click_1;
